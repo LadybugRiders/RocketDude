@@ -17,17 +17,29 @@ Player.prototype.start = function() {
 
   // set camera to follow Dude
   this.go.game.camera.follow(this.go.entity);
+  //set the deadzone
+  this.go.game.camera.deadzone = new Phaser.Rectangle(50, 50, 200, 260);
 
   // enable cursors
   this.cursors = this.go.game.input.keyboard.createCursorKeys();
+
+  // set finish to false
+  this.finish = false;
 };
 
 Player.prototype.update = function() {
-	this.go.body.moveRight(this.speed.x)
+  // if Dude doesn't cross the finish line
+  if (this.finish == false) {
+    this.go.body.moveRight(this.speed.x)
 
-  if (this.cursors.up.isDown) {
-  	this.go.body.moveUp(this.speed.y);
-  } else if (this.cursors.down.isDown) {
-    this.go.body.moveDown(this.speed.y);
+    if (this.cursors.up.isDown) {
+      this.go.body.moveUp(this.speed.y);
+    } else if (this.cursors.down.isDown) {
+      this.go.body.moveDown(this.speed.y);
+    }
+  } else {
+    setTimeout(function() {
+      this.go.body.setZeroVelocity();
+    }, 500);
   }
 };
