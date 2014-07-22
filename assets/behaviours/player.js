@@ -11,7 +11,7 @@ Player.prototype.constructor = Player;
 
 Player.prototype.start = function() {
   // set max speed
-  this.speed = new Phaser.Point(150, 60);
+  this.speed = new Phaser.Point(150, 100);
   // set no gravity
   this.go.entity.body.data.gravityScale = 0;
 
