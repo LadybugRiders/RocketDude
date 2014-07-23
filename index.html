@@ -2,36 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Game</title>
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="../shared/css/bootstrap.min.css">
-  <!-- Bootstrap theme (Optional) -->
-  <link rel="stylesheet" href="../shared/css/bootstrap-theme.min.css">
-  <!-- custom style -->
-  <link rel="stylesheet" href="css/app.css"/>
+  <title>RocketDude [Made with LREditor]</title>
+  <link href="css/app.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
-        <div id="phaser"></div>
-        <div class="row">
-          <div class="col-md-12">
-            Use Arrows Up/Down  to move up and down.
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2"></div>
-    </div>
+  <div id="content">
+    <div id="phaser"></div>
+    <div>Use arrows Up/Down to move up and down.</div>
   </div>
-  
-  <!-- JAVASCRIPT -->
-  <!-- jQuery -->
-  <script src="../shared/js/lib/jquery-2.1.0.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="../shared/js/lib/bootstrap.min.js"></script>
-  <!-- Phaser -->
+
+  <!-- PHASER -->
   <script src="../shared/js/lib/phaser.js"></script>
   
   <!-- LADYBUG RIDERS -->
@@ -54,24 +34,17 @@
   <script src="../shared/js/dev/phaser/levelimportergame.js"></script>
   <script src="../shared/js/dev/phaser/utils.js"></script>
   <script src="../shared/js/dev/phaser/collision_manager.js"></script>  
-
   <!-- plugins -->
   <script src="../shared/js/dev/phaser/plugin/pollinator.js"></script>
   <script src="../shared/js/dev/phaser/plugin/input_manager.js"></script>
   <script src="../shared/js/dev/phaser/plugin/cutscene_manager.js"></script>    
   <script src="../shared/js/dev/phaser/plugin/dialog_manager.js"></script> 
-
   <!-- ui -->
   <script src="../shared/js/dev/phaser/ui/dialog_box.js"></script>
-
   <!-- triggers -->
   <script src="../shared/js/dev/phaser/trigger/trigger.js"></script>  
   <script src="../shared/js/dev/phaser/trigger/trigger_cutscene.js"></script>  
   <script src="../shared/js/dev/phaser/trigger/trigger_message_object.js"></script> 
-
-  <!--******-->
-  <!-- game -->
-  <!--******-->
 
   <!-- MAIN -->
   <script src="js/dev/main.js"></script>
