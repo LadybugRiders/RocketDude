@@ -18,7 +18,7 @@ Player.prototype.start = function() {
   // set camera to follow Dude
   this.go.game.camera.follow(this.go.entity);
   //set the deadzone
-  this.go.game.camera.deadzone = new Phaser.Rectangle(50, 50, 200, 260);
+  this.go.game.camera.deadzone = new Phaser.Rectangle(50, 100, 200, 160);
 
   // enable cursors
   this.cursors = this.go.game.input.keyboard.createCursorKeys();
@@ -30,16 +30,21 @@ Player.prototype.start = function() {
 Player.prototype.update = function() {
   // if Dude doesn't cross the finish line
   if (this.finish == false) {
-    this.go.body.moveRight(this.speed.x)
+    this.go.body.moveRight(this.speed.x);
 
     if (this.cursors.up.isDown) {
       this.go.body.moveUp(this.speed.y);
     } else if (this.cursors.down.isDown) {
       this.go.body.moveDown(this.speed.y);
     }
-  } else {
-    setTimeout(function() {
-      this.go.body.setZeroVelocity();
-    }, 500);
   }
+};
+
+Player.prototype.stop = function() {
+  this.finish = true;
+
+  this.go.game.time.events.add(Phaser.Timer.SECOND * 0.5, function() {
+    this.go.body.setZeroVelocity();
+    this.go.body.setZeroDamping();
+  }, this);
 };
